@@ -1,8 +1,8 @@
 # AsiaYo - Jr Backend Engineer - 何艾倫
 
-##資料庫測驗
+## 資料庫測驗
 
-###題目一
+### 題目一
 請寫出一條查詢語句 (SQL)，列出在 2023 年 5 月下訂的訂單，使用台幣付款且5月總金額最多的前 10 筆的旅宿 ID (bnb_id), 旅宿名稱 (bnb_name), 5 月總金額 (may_amount)
 
 ```sql
@@ -18,7 +18,7 @@ ORDER BY may_amount DESC
 LIMIT 10;
 ```
 
-###題目二
+### 題目二
 在題目一的執行下，我們發現 SQL 執行速度很慢，您會怎麼去優化？請闡述您怎麼判斷與優化的方式
 1.  查詢重寫：
     * 可以執行 EXPLAIN 來分析 SQL，這樣可以查看是否存在進行全表掃描的情況。
@@ -29,9 +29,9 @@ LIMIT 10;
 3.  索引優化：
     * 為 orders 表的 bnb_id, currency, 和 created_at 列創建複合索引。
 ---
-##API實作測驗
+## API實作測驗
 
-###SOLID
+### SOLID
 1.  單一職責原則 (SRP)：
     * `OrderController` 專注於處理 HTTP 請求和回應，不涉及業務邏輯。
     * `OrderService` 負責處理訂單的業務邏輯。
@@ -48,7 +48,7 @@ LIMIT 10;
 5.  依賴反向原則 (DIP):
     * `OrderController` 依賴於 `OrderServiceInterface` 而不是具體的 `OrderService` 實現，允許輕鬆替換或模擬服務實現。
     
-###設計模式
+### 設計模式
 1. 策略模式 (Strategy Pattern)：
    * 在 `OrderTransformer` 中，不同的驗證邏輯（如名稱、價格、貨幣檢查）被實現為獨立的策略類。
    * 這些策略類都實現了 `ValidationStrategy` 接口，可以根據需要靈活替換或擴展。
